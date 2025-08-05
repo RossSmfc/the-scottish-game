@@ -1,8 +1,21 @@
-index.md (Home Page)
 ---
 layout: home
-title: Welcome to The Scottish Game
+title: The Scottish Game
 ---
 
-A site dedicated to the wild world of Scottish football — beyond the Old Firm.  
-Check out the latest match reports and league drama.
+# Welcome to The Scottish Game
+
+A site dedicated to the wild world of Scottish football — beyond the Old Firm.
+
+---
+
+## Latest Match Reports
+
+{% for post in site.posts %}
+### [{{ post.title }}]({{ post.url }})  
+*{{ post.date | date: "%B %-d, %Y" }}*  
+{{ post.excerpt | strip_html | truncate: 250 }}
+
+---
+
+{% endfor %}
